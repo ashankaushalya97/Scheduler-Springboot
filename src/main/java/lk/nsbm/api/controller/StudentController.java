@@ -17,6 +17,7 @@ public class StudentController {
 
     @PostMapping(consumes = MediaType.APPLICATION_JSON_VALUE,produces = MediaType.APPLICATION_JSON_VALUE)
     public String saveEntry(@RequestBody StudentDTO student){
+    	System.out.println("");
         studentBO.saveStudent(student);
         return "\"" +student.getName() + "\"";
     }
