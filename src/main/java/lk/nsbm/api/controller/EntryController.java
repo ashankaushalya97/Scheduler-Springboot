@@ -31,6 +31,7 @@ public class EntryController {
 
     @GetMapping("/{id}")
     public ResponseEntity<List<EntryDTO>> searchEntries(@PathVariable int id){
+        System.out.println(id);
         List<EntryDTO> customers = entryBO.searchEntry(id);
         HttpHeaders httpHeaders = new HttpHeaders();
         httpHeaders.add("X-Count",customers.size()+"");
